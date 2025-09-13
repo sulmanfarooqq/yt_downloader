@@ -1,19 +1,35 @@
-# 🎬 Advanced Video Downloader
+# y2mate CLI Downloader
 
-A powerful Streamlit-based video downloader that supports multiple platforms with advanced features for high-quality, fast downloads.
+A beautiful, modern CLI interface for downloading YouTube videos and audios using the y2mate API.
 
-## ✨ Features
+<p align="center">
+ <img src="https://github.com/Simatwa/y2mate-api/blob/main/assets/logo.png?raw=true" height="70px" width="70px">
+</p>
 
-- **Multi-Platform Support**: Download from YouTube, Facebook, Instagram, and LinkedIn
-- **High Quality Downloads**: Support for highest quality videos up to 4K
-- **Audio-Only Option**: Download audio-only content as MP3 files
-- **Quality Selection**: Choose from multiple video qualities (highest, 720p, 480p, 360p)
-- **Playlist Support**: Download entire playlists with a single click
-- **Retry Mechanism**: Automatic retry on failed downloads (configurable up to 10 attempts)
-- **Progress Indicators**: Real-time download progress with speed and ETA
-- **Smart File Naming**: Files are named using original video titles
-- **Video Previews**: Preview videos before downloading
-- **Thumbnail Support**: Embedded thumbnails for audio files
+<h1 align="center">y2mate CLI Downloader</h1>
+
+<p align="center">
+<a href="#"><img alt="Python version" src="https://img.shields.io/pypi/pyversions/y2mate-api"/></a>
+<a href="LICENSE"><img alt="License" src="https://img.shields.io/static/v1?logo=GPL&color=Blue&message=MIT&label=License"/></a>
+<a href="https://pypi.org/project/y2mate-api"><img alt="PyPi" src="https://img.shields.io/pypi/v/y2mate-api"></a>
+</p>
+
+> Download YouTube videos and audios with a beautiful CLI interface
+
+## 🌟 Features
+
+- 🎨 Beautiful, modern terminal interface using Rich
+- 🔍 Search for videos or enter direct YouTube URLs
+- 📋 View available formats and qualities in elegant tables
+- 🚀 Progress bars for downloads
+- 📂 Download history tracking
+- 🛡️ Cloudflare bypass support
+- 📱 Responsive design that works on all terminal sizes
+
+## 📋 Requirements
+
+- Python 3.9 or higher
+- All dependencies listed in `requirements.txt`
 
 ## 🚀 Installation
 
@@ -23,47 +39,51 @@ A powerful Streamlit-based video downloader that supports multiple platforms wit
    pip install -r requirements.txt
    ```
 
-3. Run the application:
+## ▶️ Usage
+
+1. Run the downloader:
    ```bash
-   streamlit run app.py
+   python downloader.py
+   ```
+   
+   Or if installed via pip:
+   ```bash
+   y2mate
    ```
 
-## 📋 Usage
+2. Follow the interactive prompts:
+   - Enter a YouTube URL or search term
+   - Provide your CF clearance cookie (see below)
+   - Select a video from the search results
+   - Choose your preferred format and quality
+   - Specify download location
+   - Enjoy your download with a beautiful progress bar!
 
-1. Enter the video URL in the input field
-2. Select download format (video or audio)
-3. Choose video quality if downloading video
-4. Set retry attempts if needed (default: 3)
-5. Check "Download entire playlist" if you want to download playlists
-6. Click "Download Now" to start the download
-7. Once completed, click the download button to save the file
+## 🔐 Cloudflare Clearance
 
-## 🛠️ Technical Details
+Due to Cloudflare protection on y2mate.com, you need to provide a CF clearance cookie:
 
-- Built with **Streamlit** for the web interface
-- Uses **yt-dlp** for robust video downloading capabilities
-- Supports multiple video formats and codecs
-- Includes proper HTTP headers to bypass restrictions
-- Automatic retry mechanism for reliable downloads
+1. Install the **Http Tracker** Chrome extension using [this link](https://chromewebstore.google.com/detail/http-tracker/fklakbbaaknbgcedidhblbnhclijnhbi)
+2. Using **Chrome Browser**, navigate to [y2mate.com](https://y2mate.com) and pass the bot verification stage
+3. Start the *Http Tracker* extension
+4. On the search section of y2mate.com, key-in anything and press Enter
+5. Return to the Http Tracker window and look for any of the recent URLs containing `*y2mate.com*` and click it
+6. Navigate down to the cookies section and copy the value of key `cf_clearance`
 
-## 🔧 Troubleshooting
+⚠️ **Important**: The cookie expires frequently, so you may need to update it regularly.
 
-### Common Issues
+## 📸 Screenshots
 
-1. **403 Forbidden Errors**: The app includes optimized headers to bypass restrictions. Increase retry attempts if needed.
+The CLI features a beautiful interface with:
 
-2. **Slow Downloads**: Try selecting a lower quality option or check your internet connection.
+- Colorful welcome screen
+- Progress indicators
+- Elegant tables for video listings
+- Format selection menus
+- Download progress bars
 
-3. **Playlist Not Downloading**: Ensure "Download entire playlist" is checked and the URL points to a playlist.
+## ⚠️ Disclaimer
 
-4. **Audio Conversion Issues**: Make sure FFmpeg is installed on your system for audio conversion.
+This repository is intended for educational and personal use only. The use of this repository for any commercial or illegal purposes is strictly prohibited. The repository owner does not endorse or encourage the downloading or sharing of copyrighted material without permission. The repository owner is not responsible for any misuse of the software or any legal consequences that may arise from such misuse.
 
-### Requirements
-
-- Python 3.7+
-- FFmpeg (for audio conversion and format processing)
-- Stable internet connection
-
-## 📝 License
-
-This project is for educational and personal use only. Please respect copyright laws and terms of service of the platforms you download from.
+This script has no official relation with y2mate.com.

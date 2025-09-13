@@ -1,0 +1,8 @@
+*__pycache__
+dist/
+build/
+*.vscode
+*.egg-info
+terminal.py
+*.spec
+test*.py
